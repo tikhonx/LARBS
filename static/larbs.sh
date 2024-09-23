@@ -23,6 +23,11 @@ error() {
 	exit 1
 }
 
+
+
+
+## Welcome Message
+
 welcomemsg() {
 	whiptail --title "Welcome!" \
 		--msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Linux desktop, which I use as my main machine.\\n\\n-Luke" 10 60
@@ -31,6 +36,10 @@ welcomemsg() {
 		--no-button "Return..." \
 		--yesno "Be sure the computer you are using has current pacman updates and refreshed Arch keyrings.\\n\\nIf it does not, the installation of some programs might fail." 8 70
 }
+
+
+
+## Creating an account
 
 getuserandpass() {
 	# Prompts user for new username and password.
@@ -54,6 +63,11 @@ usercheck() {
 			--yesno "The user \`$name\` already exists on this system. LARBS can install for a user already existing, but it will OVERWRITE any conflicting settings/dotfiles on the user account.\\n\\nLARBS will NOT overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that LARBS will change $name's password to the one you just gave." 14 70
 }
 
+
+
+
+## Confirmation by user
+
 preinstallmsg() {
 	whiptail --title "Let's get this party started!" --yes-button "Let's go!" \
 		--no-button "No, nevermind!" \
@@ -74,6 +88,15 @@ adduserandpass() {
 	echo "$name:$pass1" | chpasswd
 	unset pass1 pass2
 }
+
+
+
+
+
+
+
+
+
 
 refreshkeys() {
 	case "$(readlink -f /sbin/init)" in
