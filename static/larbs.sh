@@ -271,8 +271,10 @@ finalize() {
 		--msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 13 80
 }
 
-### THE ACTUAL SCRIPT ###
 
+
+### THE ACTUAL SCRIPT ###
+### Whiptail is a program that allows shell scripts to display dialog boxes to the user for informational purposes, or to get input from the user in a friendly way
 ### This is how everything happens in an intuitive format and order.
 
 # Check if user is root on Arch distro. Install whiptail.
